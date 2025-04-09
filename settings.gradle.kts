@@ -23,3 +23,5 @@ rootProject.name = "MP_LAB"
 include(":app")
 include(":dweek04a")
 include(":dweek05a")
+include(":app:lab02")
+include(":lab02")

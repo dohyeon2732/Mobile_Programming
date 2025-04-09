@@ -4,16 +4,16 @@ import androidx.compose.runtime.mutableStateListOf
 
 object PartsClothesFactory {
     fun makeParts()= mutableStateListOf(
-        Clothes("arms",false),
-        Clothes("ears",false),
-        Clothes("eyebrows",false),
-        Clothes("eyes",false),
-        Clothes("glassess",false),
-        Clothes("hat",false),
-        Clothes("mouth",false),
-        Clothes("mustache",false),
-        Clothes("nose",false),
-        Clothes("shoes",false),
+        Clothes("arms",true),
+        Clothes("ears",true),
+        Clothes("eyebrows",true),
+        Clothes("eyes",true),
+        Clothes("glassess",true),
+        Clothes("hat",true),
+        Clothes("mouth",true),
+        Clothes("mustache",true),
+        Clothes("nose",true),
+        Clothes("shoes",true),
 
     )
 }

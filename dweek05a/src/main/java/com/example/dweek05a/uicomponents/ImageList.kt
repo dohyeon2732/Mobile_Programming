@@ -5,6 +5,50 @@ import androidx.compose.ui.Modifier
 import com.example.dweek05a.model.ButtonType
 import com.example.dweek05a.model.imageData
 
+
+@Composable
+fun ImageList(
+    modifier: Modifier = Modifier,
+    imageData: imageData
+) {
+    when (imageData.buttonType) {
+        ButtonType.ICON -> {
+            ImageWithButton(image = imageData.image) {
+                ButtonWithIcon(likes = imageData.likes) {
+
+                    imageData.likes += 1
+
+                }
+            }
+        }
+
+        ButtonType.BADGE -> {
+            ImageWithButton(image = imageData.image) {
+                ButtonWithBadge(likes = imageData.likes) {
+                    imageData.likes += 1
+
+                }
+            }
+        }
+
+        ButtonType.EMOJI -> {
+            ImageWithButton(image = imageData.image) {
+                ButtonWithEmoji(
+                    likes = imageData.likes,
+                    dislikes = imageData.dislikes,
+                    onClickLikes = {
+
+                    },
+                    onClickDisLikes = {
+                        imageData.dislikes += 1//copy하는 순간 immutable
+                    }
+                )
+            }
+        }
+    }
+}
+
+
 @Composable
 fun ImageList(
     modifier: Modifier = Modifier,
@@ -41,7 +85,7 @@ fun ImageList(
                         },
                         onClickDisLikes = {
                             imageList[index] =
-                                imageData.copy(likes = imageData.dislikes + 1) //copy하는 순간 immutable
+                                imageData.copy(dislikes = imageData.dislikes + 1) //copy하는 순간 immutable
                         }
                     )
                 }
